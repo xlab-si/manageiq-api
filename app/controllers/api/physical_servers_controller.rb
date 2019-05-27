@@ -65,6 +65,10 @@ module Api
       action_result(false, err.to_s)
     end
 
+    def firmware_binaries_query_resource(object)
+      object.compatible_firmware_binaries
+    end
+
     private
 
     def change_resource_state(state, type, id, data = [])

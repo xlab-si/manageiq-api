@@ -1244,6 +1244,16 @@
       :get:
       - :name: read
         :identifier: firmware_show
+  :firmware_binaries:
+    :description: Firmware Binaries
+    :options:
+    - :subcollection
+    :verbs: *g
+    :klass: FirmwareBinary
+    :subcollection_actions:
+      :get:
+      - :name: read
+        :identifier: firmware
   :flavors:
     :description: Flavors
     :identifier: flavor
@@ -1931,6 +1941,7 @@
     :klass: PhysicalServer
     :subcollections:
     - :event_streams
+    - :firmware_binaries
     :collection_actions:
       :get:
       - :name: read
@@ -2599,6 +2610,8 @@
           :identifier: vm_retire
         - :klass: PhysicalServerProvisionRequest
           :identifier: physical_server_provision
+        - :klass: PhysicalServerFirmwareUpdateRequest
+          :identifier: firmware
         - :klass: PhysicalServerBiosUpdateRequest
           :identifier: physical_server_provision
       - :name: edit
