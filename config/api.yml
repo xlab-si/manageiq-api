@@ -2599,6 +2599,8 @@
           :identifier: vm_retire
         - :klass: PhysicalServerProvisionRequest
           :identifier: physical_server_provision
+        - :klass: PhysicalServerBiosUpdateRequest
+          :identifier: physical_server_provision
       - :name: edit
         :identifier: miq_request_edit
       - :name: approve
