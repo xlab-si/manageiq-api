@@ -395,6 +395,12 @@
         :identifier: ops_settings
       - :name: delete
         :identifier: ops_settings
+  :cdroms:
+    :description: CD-ROMs
+    :options:
+    - :subcollection
+    :verbs: *g
+    :klass: Disk
   :chargebacks:
     :description: Chargebacks
     :identifier: chargeback
@@ -1144,6 +1150,12 @@
         :identifier: storage_tag
       - :name: unassign
         :identifier: storage_tag
+  :disks:
+    :description: Disks
+    :options:
+    - :subcollection
+    :verbs: *g
+    :klass: Disk
   :enterprises:
     :description: Enterprises
     :options:
@@ -2585,6 +2597,8 @@
           :identifier: vm_retire
         - :klass: PhysicalServerProvisionRequest
           :identifier: physical_server_provision
+        - :klass: PhysicalServerBiosUpdateRequest
+          :identifier: physical_server_provision
       - :name: edit
         :identifier: miq_request_edit
       - :name: approve
@@ -2884,6 +2898,8 @@
         :identifier: dialog_edit_editor
       - :name: copy
         :identifier: dialog_copy_editor
+      - :name: orchestration_template_service_dialog
+        :identifier: dialog_new_editor
     :resource_actions:
       :get:
       - :name: read
@@ -2899,6 +2915,8 @@
         :identifier: dialog_edit_editor
       - :name: copy
         :identifier: dialog_copy_editor
+      - :name: orchestration_template_service_dialog
+        :identifier: dialog_new_editor
       :delete:
       - :name: delete
         :identifier: dialog_delete
@@ -3741,6 +3759,8 @@
     :verbs: *gpd
     :klass: Vm
     :subcollections:
+    - :cdroms
+    - :disks
     - :tags
     - :policies
     - :policy_profiles
@@ -3892,6 +3912,26 @@
       :delete:
       - :name: delete
         :identifier: vm_delete
+    :disks_subcollection_actions:
+      :get:
+      - :name: read
+        :identifier:
+        - vm_show
+    :cdroms_subcollection_actions:
+      :get:
+      - :name: read
+        :identifier:
+        - vm_show
+    :disks_subresource_actions:
+      :get:
+      - :name: read
+        :identifier:
+        - vm_show
+    :cdroms_subresource_actions:
+      :get:
+      - :name: read
+        :identifier:
+        - vm_show
     :tags_subcollection_actions:
       :post:
       - :name: assign
